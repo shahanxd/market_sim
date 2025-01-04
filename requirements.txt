@@ -1,5 +1,5 @@
-cs50
-Flask
-Flask-Session
-pytz
-requests
+Flask==2.0.1
+Flask-Session==0.3.2
+cs50==6.0.1
+pytz==2021.1
+requests==2.25.1
