@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Symbol</th>
+                <th>Owned Shares</th>
+                <th>Current Unit Price</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ row.symbol }}</td>
+                        <td>{{ row.shares }}</td>
+                        <td>{{ row.current_price | usd }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+    </table>
+    <h2>Cash: {{ cash | usd }} </h2>
+    <h2>Invested Value: {{ invested_value | usd }} </h2>
+    <h2>Net Value: {{ net_value | usd }} </h2>
+
+{% endblock %}
